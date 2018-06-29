@@ -3,22 +3,22 @@ import uniqueValidator from 'mongoose-unique-validator'
 
 const { ObjectId } = Schema.Types
 
-const UserSchema = Schema({
+const USSchema = Schema({
   firstname: { type: String, required: true },
   lastname: { type: String },
   email: { type: String, required: true, unique: true, index: true },
   username: { type: String, required: true, unique: true, index: true },
   password: { type: String, required: true },
-  scs: [{ type: ObjectId, ref: 'SC', required: true, default: [] }],
-  sps: [{ type: ObjectId, ref: 'SP', required: true, default: [] }],
-  czs: [{ type: ObjectId, ref: 'CZ', required: true, default: [] }],
-  ans: [{ type: ObjectId, ref: 'AN', required: true, default: [] }],
-  ofs: [{ type: ObjectId, ref: 'OF', required: true, default: [] }],
-  cts: [{ type: ObjectId, ref: 'CT', required: true, default: [] }],
-  ocs: [{ type: ObjectId, ref: 'OC', required: true, default: [] }],
-  fts: [{ type: ObjectId, ref: 'FT', required: true, default: [] }]
+  scs: [{ type: ObjectId, ref: 'SC' }],
+  sps: [{ type: ObjectId, ref: 'SP' }],
+  czs: [{ type: ObjectId, ref: 'CZ' }],
+  ans: [{ type: ObjectId, ref: 'AN' }],
+  ofs: [{ type: ObjectId, ref: 'OF' }],
+  cts: [{ type: ObjectId, ref: 'CT' }],
+  ocs: [{ type: ObjectId, ref: 'OC' }],
+  fts: [{ type: ObjectId, ref: 'FT' }]
 })
 
 UserSchema.plugin(uniqueValidator)
 
-export default mongoose.model('User', UserSchema)
+export default mongoose.model('US', USSchema)
