@@ -1,5 +1,6 @@
 import express from 'express'
 import bodyParser from 'body-parser'
+import { client } from './routes'
 
 const app = express()
 
@@ -14,5 +15,7 @@ if (process.env.NODE_ENV === 'development') {
     next()
   })
 }
+
+app.use('/api/clients', client)
 
 export default app
