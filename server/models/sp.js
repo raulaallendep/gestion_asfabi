@@ -12,6 +12,7 @@ const SPSchema = Schema({
   expired: { type: Date },
   sc: { type: ObjectId, ref: 'SC', required: true },
   items: [{ type: ObjectId, ref: 'ISP', required: true, default: [] }],
+  czs: [{ type: ObjectId, ref: 'CZ' }],
   user: { type: ObjectId, ref: 'User', required: true }
 })
 

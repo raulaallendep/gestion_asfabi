@@ -13,6 +13,9 @@ const SCSchema = Schema({
   description: { type: String, required: true },
   items: [{ type: ObjectId, ref: 'ISC', required: true, default: [] }],
   sps: [{ type: ObjectId, ref: 'SP' }],
+  ans: [{ type: ObjectId, ref: 'AN' }],
+  ofs: [{ type: ObjectId, ref: 'OF' }],
+  cts: [{ type: ObjectId, ref: 'CT' }],
   user: { type: ObjectId, ref: 'User', required: true }
 })
 
