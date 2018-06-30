@@ -19,6 +19,6 @@ const USSchema = Schema({
   fts: [{ type: ObjectId, ref: 'FT' }]
 })
 
-UserSchema.plugin(uniqueValidator)
+USSchema.plugin(uniqueValidator)
 
 export default mongoose.model('US', USSchema)
